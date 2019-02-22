@@ -30,6 +30,7 @@ public class CafeTest {
         //Given
         Cafe cafe = new Cafe();
         cafe.restockBeans(7);
+        //rst
 
         //When
         Coffee coffee = cafe.brew(CoffeeType.Espresso);
