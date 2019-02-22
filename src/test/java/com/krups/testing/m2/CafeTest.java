@@ -7,9 +7,11 @@ public class CafeTest {
 
     @Test
     public void canBrewEspresso() {
+
         //Given
         Cafe cafe = new Cafe();
         cafe.restockBeans(7);
+
         //When
         Coffee coffee = cafe.brew(CoffeeType.Espresso);
 
@@ -19,7 +21,21 @@ public class CafeTest {
         Assert.assertEquals(7, coffee.getBeans());
 
 //        System.out.println(toString());
-
 //        System.out.println(cafe.equals(cafe));
+    }
+
+    @Test
+    public void brewingEspressoConsumesBeans() {
+
+        //Given
+        Cafe cafe = new Cafe();
+        cafe.restockBeans(7);
+
+        //When
+        Coffee coffee = cafe.brew(CoffeeType.Espresso);
+
+        //Then
+        Assert.assertEquals(0, cafe.getBeansInStock());
+
     }
 }
